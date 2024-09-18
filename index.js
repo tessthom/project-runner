@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import chalk from 'chalk';
 import chokidar from 'chokidar';
 import debounce from 'lodash.debounce';
 import fs from 'fs';
@@ -20,10 +21,11 @@ prog
     }
 
     let proc;
-    const run = debounce((path) => {
+    const run = debounce(() => {
       if (proc) { // prevent prior versions of program from continuing to run
         proc.kill();
       }
+      console.log(chalk.bgGreen('--> Running process...'));
       proc = spawn('node', [name], { stdio: 'inherit' }); // run file `name`. wire stdio streams from child process to this program.
     }, 100);
     

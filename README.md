@@ -6,7 +6,7 @@ A Node.js tool built to emulate the functionality of the NPM package nodemon, wh
 
 This project relies on the following:
 
-- **chokidar**: Minimal x-platform file watching library.
 - **caporal**: Framework for Node CLI tools.
-- **child_process**: (exec, fork, spawn).
+- **chalk**: Terminal styling.
+- **chokidar**: Minimal x-platform file watching library.
 - **lodash.debounce**: Debouncer.
