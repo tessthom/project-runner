@@ -19,8 +19,12 @@ prog
       throw new Error(`Cannot find file: ${name}`); // throw custom error
     }
 
+    let proc;
     const run = debounce((path) => {
-      spawn('node', [name], { stdio: 'inherit' }); // run file called `name`, inherit any log statements/errors/etc from child process
+      if (proc) { // prevent prior versions of program from continuing to run
+        proc.kill();
+      }
+      proc = spawn('node', [name], { stdio: 'inherit' }); // run file `name`. wire stdio streams from child process to this program.
     }, 100);
     
     chokidar.watch('.')
