@@ -9,3 +9,4 @@ This project relies on the following:
 - **chokidar**: Minimal x-platform file watching library.
 - **caporal**: Framework for Node CLI tools.
 - **child_process**: stdIO module for asynchronous process creation (exec, fork, spawn).
+- **lodash.debounce**: Debouncer
